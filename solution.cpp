@@ -12,8 +12,11 @@ using namespace sol300;
 using namespace std;
 
 /*takeaways
-  - DP
-  - time complexity : O(n^2)
+ - DP
+  - time complexity: O(n^2)
+  - you need to find a max from the dp as dp[i]
+    only stores the length of the longest subsequence
+    ends at nums[i]
 */
 
 int Solution::lengthOfLIS(vector<int> &nums)
@@ -22,7 +25,8 @@ int Solution::lengthOfLIS(vector<int> &nums)
   /*
      - dp[i] store the length of the longest
        subsequence ends at nums[i]
-     - worse case: signle number is a sorted subsequence
+     - edge case: a signle number is a sorted
+       subsequence
   */
   auto dp = vector<int>(n, 1);
 
