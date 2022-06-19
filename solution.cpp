@@ -44,6 +44,8 @@ int Solution::lengthOfLIS(vector<int> &nums)
 
 /* DP
    - time complexity O(nlogn)
+   - you need a sorted array that maintains
+     a list of smaller numbers
 */
 int Solution::lengthOfLIS2(vector<int> &nums)
 {
@@ -70,9 +72,10 @@ int Solution::lengthOfLIS2(vector<int> &nums)
            is bigger than the incoming
            number so the subsequence is
            still sorted
-         - this increase the gap between numbers
-           which also increases the chance of
-           accommodating more numbers
+         - this keeps smaller numbers
+           in dp, which increases the chance
+           of accepting more numbers into
+           dp
       */
       *bigger = nums[i];
   }
